@@ -33,6 +33,10 @@ def dir():
 
 
 def down():
+    '''
+    从ftp上下载文件
+    :return:
+    '''
     try:
         f = ftplib.FTP(HOST)
         f.encoding='gbk'
@@ -40,11 +44,9 @@ def down():
         #进入ftp上的目录
         f.cwd('准备')
         f.retrbinary('retr %s' % 'IMG_0128.JPG', open('d:/testimg.jpg', 'wb').write)
-        #f.quit()
     except (socket.error, socket.gaierror) as e:
         print(e)
-    else: f.quit()
-
+    f.quit()
 
 # dir()
 down()
