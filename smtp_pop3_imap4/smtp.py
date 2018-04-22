@@ -9,7 +9,7 @@ def simpleendail():
     发送简单的邮件（不包含html、附件等）
     :return:
     '''
-    s = smtplib.SMTP('smtp.163.com')
+    s = smtplib.SMTP('smtp_pop3_imap4.163.com')
     s.set_debuglevel(1)
     # 改成你自己的邮箱
     s.login('yourname', 'yourpass')
@@ -50,7 +50,7 @@ def adj_img(path, imageName):
 
 
 def sendAdjunctMail(username, pwd, fr, to, msg):
-    s = smtplib.SMTP('smtp.163.com')
+    s = smtplib.SMTP('smtp_pop3_imap4.163.com')
     #设置为显示更详细的调试信息
     s.set_debuglevel(True)
     s.login(username, pwd)
